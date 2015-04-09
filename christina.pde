@@ -41,8 +41,6 @@ void setup() {
 	audioSnippet = minim.loadSnippet("movie_sound.mp3");
 	audioSnippet.play();
 	audioSnippet.loop();
-	
-	println(audioSnippet.getControls());
 
 	videoSmoother = new Smoother(20);
 	audioSmoother = new Smoother(20);
@@ -83,7 +81,7 @@ void applyFilter() {
 		if (value > 32) value = 32;
 	}
 
-	println("value: " + value);
+	// println("value: " + value);
 
 	if (videoFilter == "posterize") {
 		filter(POSTERIZE, value);
