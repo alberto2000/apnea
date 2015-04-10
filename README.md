@@ -33,3 +33,11 @@ Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2
   3. Setting arduinoPort to some other number will change the port on which to connect to Arduino (most certainly not needed)
 6. *Press the "Play" button* on the top left of the Processing window
 7. The app will open and start reacting to audience
+
+### Images
+
+![Setup Sketch](https://raw.github.com/alberto2000/rcabiennale/master/img/rcabiennale_setup.png)
+![RCA Test Setup](https://raw.github.com/alberto2000/rcabiennale/master/img/test_setup.jpg)
+![Sensor](https://raw.github.com/alberto2000/rcabiennale/master/img/sensor.jpg)
+![Arduino Connections](https://raw.github.com/alberto2000/rcabiennale/master/img/arduino_connections.jpg)
+![Processing](https://raw.github.com/alberto2000/rcabiennale/master/img/processing.jpg)
