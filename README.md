@@ -1,10 +1,12 @@
 # rcabiennale
 Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2015 in London
 
+*Distance from guests to the projection on the wall controls pixelation/posterization of image and sound volume. Also sample sounds will be triggered if people trespass certain distance values. From the distance, the visuals are clear and natural - the closer you get to it, the more abstract and louder it gets.*
+
 ## Manual
 
 ### Components
-- Sensor attached to cables (Red: 5V, Black: GND, Yellow: Signal)
+- Ultrasonic Sensor attached to cables (Red: 5V, Black: GND, Yellow: Signal)
 - Arduino (see back of wooden box for plug-in instructions)
 - Mac Mini (needs USB Keyboard and USB Mouse, projector as a screen)
 - Projector
