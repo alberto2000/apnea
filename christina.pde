@@ -21,6 +21,7 @@ Textlabel modValueLabel;
 Range rangeSlider;
 RadioButton filterRadio;
 Slider delaySlider;
+CheckBox soundsCheckBox;
 
 // "posterize", "pixel"
 String videoFilter = "pixel";
@@ -37,6 +38,9 @@ boolean debug = false;
 boolean soundOnePlayed = false;
 boolean soundTwoPlayed = false;
 boolean soundThreePlayed = false;
+boolean soundOneActive = true;
+boolean soundTwoActive = true;
+boolean soundThreeActive = true;
 
 // other settings
 int appDelay = 25;
@@ -156,7 +160,7 @@ void applySoundEffects(float value) {
 
 	int triggerValue = int(soundTriggerSmoother.read());
 
-	if (triggerValue > -30 && triggerValue < -20 && soundOnePlayed == false) {
+	if (triggerValue > -30 && triggerValue < -20 && soundOnePlayed == false && soundOneActive) {
 		soundOne.trigger();
 		soundOnePlayed = true;
 		soundTwoPlayed = false;
@@ -164,7 +168,7 @@ void applySoundEffects(float value) {
 		println("sound1");
 	}
 
-	if (triggerValue > -20 && triggerValue < 0 && soundTwoPlayed == false) {
+	if (triggerValue > -20 && triggerValue < 0 && soundTwoPlayed == false && soundTwoActive) {
 		soundTwo.trigger();
 		soundOnePlayed = false;
 		soundTwoPlayed = true;
@@ -172,7 +176,7 @@ void applySoundEffects(float value) {
 		println("sound2");
 	}
 
-	if (triggerValue > 0 && triggerValue < 6 && soundThreePlayed == false) {
+	if (triggerValue > 0 && triggerValue < 6 && soundThreePlayed == false && soundThreeActive) {
 		soundThree.trigger();
 		soundOnePlayed = false;
 		soundTwoPlayed = false;
@@ -260,6 +264,17 @@ void setupDebugConsole() {
 		.setValue(appDelay)
 		.setRange(0, 255);
 
+	soundsCheckBox = cp5.addCheckBox("soundsController")
+		.setPosition(10, 160)
+		.setColorForeground(color(0, 50))
+		.setColorBackground(color(0, 75))
+		.setSize(20, 20)
+		.setItemsPerRow(1)
+		.addItem("Hickup", 0)
+		.addItem("Sneeze", 1)
+		.addItem("Clear throat", 2)
+		.activateAll();
+
 	if (videoFilter == "pixel") {
 		filterRadio.activate(0);
 	} else if (videoFilter == "posterize") {
@@ -313,6 +328,28 @@ void controlEvent(ControlEvent theControlEvent) {
 
 	if (theControlEvent.isFrom(delaySlider)) {
 		appDelay = int(theControlEvent.value());
+	}
+
+	if (theControlEvent.isFrom(soundsCheckBox)) {
+
+		if (soundsCheckBox.getArrayValue()[0] == 1) {
+			soundOneActive = true;
+		} else {
+			soundOneActive = false;
+		}
+
+		if (soundsCheckBox.getArrayValue()[1] == 1) {
+			soundTwoActive = true;
+		} else {
+			soundTwoActive = false;
+		}
+
+		if (soundsCheckBox.getArrayValue()[2] == 1) {
+			soundThreeActive = true;
+		} else {
+			soundThreeActive = false;
+		}
+
 	}
 
 }
