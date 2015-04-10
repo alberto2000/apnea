@@ -27,6 +27,7 @@ Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2
   1. Power up Mac Mini
   2. Login with user "rcabiennale" and password "rcabiennale" (both without the quotes)
   3. On the desktop there is a folder called "Christina", containing a link to the application, code and to this document
+  4. **IMPORTANT** the projector/screen resolution must be set to 1280x720 (same as video file size) for fullscreen to work
 5. Double click the "christina.pde" file, this is the application and will open in Processing
   1. Inside the code there are only two parameters that might (only might!) need to be changed, that is the line `boolean isFullscreen = true;` and `int arduinoPort = 5;`
   2. Setting isFullscreen to "false" (without brackets) will launch app in a window
