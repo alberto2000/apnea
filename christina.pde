@@ -31,7 +31,7 @@ int maxValue = 525;
 int minValue = 0;
 
 // fullscreen true or false
-boolean isFullscreen = false;
+boolean isFullscreen = true;
 
 // the port number of arduino (on mac mini should be 5)
 int arduinoPort = 5;
