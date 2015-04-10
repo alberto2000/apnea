@@ -8,7 +8,7 @@ class Smoother {
 		
 		for (int i = 0; i < values.length; i++) {
 			values[i] = 0;
-    }
+    	}
 
 	}
 	
@@ -16,9 +16,10 @@ class Smoother {
 		
 		for (int i = 0; i < (values.length - 1); i++) {
 			values[i] = values[i + 1];
-    }
+    	}
 		
 		values[values.length - 1] = value;
+
 	}
 	
 	float read() {
@@ -27,11 +28,19 @@ class Smoother {
 		
 		for (int i = 0; i < values.length; i++) {
 			value += values[i];
-    }
+    	}
 
 		value /= values.length;
 		return value;
 		
+	}
+
+	void reset(int resetValue) {
+
+		for (int i = 0; i < values.length; i++) {
+			values[i] = resetValue;
+    	}
+    	
 	}
 	
 }
