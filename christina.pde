@@ -76,7 +76,7 @@ void setup() {
 	// value smoothing
 	videoSmoother = new Smoother(20);
 	audioSmoother = new Smoother(20);
-	soundTriggerSmoother = new Smoother(50);
+	soundTriggerSmoother = new Smoother(20);
 
 	// start the movie
 	movie = new Movie(this, "movie.mp4");
@@ -117,7 +117,7 @@ void applyVideoEffects(float value) {
 		modValue = map(value, minValue, maxValue, 2, 255);
 	} else if (videoFilter == "pixel") {
 		modValue = map(value, minValue, maxValue, 32, 1);
-		modValue = modValue / (32 - modValue);
+		modValue = modValue / (32 - modValue) * 2;
 	}
 
 	// value correction if for any case it is wrong
@@ -139,7 +139,7 @@ void applyVideoEffects(float value) {
 
 	// apply specific video effect
 	if (videoFilter == "posterize") {
-		filter(POSTERIZE, modValue);
+		if (modValue < 200) filter(POSTERIZE, modValue);
 	} else if (videoFilter == "pixel") {
 		doPixelImage(modValue);
 	}
@@ -165,7 +165,6 @@ void applySoundEffects(float value) {
 		soundOnePlayed = true;
 		soundTwoPlayed = false;
 		soundThreePlayed = false;
-		println("sound1");
 	}
 
 	if (triggerValue > -20 && triggerValue < 0 && soundTwoPlayed == false && soundTwoActive) {
@@ -173,7 +172,6 @@ void applySoundEffects(float value) {
 		soundOnePlayed = false;
 		soundTwoPlayed = true;
 		soundThreePlayed = false;
-		println("sound2");
 	}
 
 	if (triggerValue > 0 && triggerValue < 6 && soundThreePlayed == false && soundThreeActive) {
@@ -181,7 +179,6 @@ void applySoundEffects(float value) {
 		soundOnePlayed = false;
 		soundTwoPlayed = false;
 		soundThreePlayed = true;
-		println("sound3");
 	}
 
 	mainAudio.setGain(modValue);
@@ -317,9 +314,13 @@ void controlEvent(ControlEvent theControlEvent) {
 		if (val == 0) {
 			videoFilter = "pixel";
 			rangeSlider.setRangeValues(0, 525);
+			minValue = 0;
+			maxValue = 525;
 		} else if (val == 1) {
 			videoFilter = "posterize";
-			rangeSlider.setRangeValues(50, 525);
+			rangeSlider.setRangeValues(125, 600);
+			minValue = 125;
+			maxValue = 600;
 		}
 
 		videoSmoother.reset(2);
