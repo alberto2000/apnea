@@ -30,8 +30,11 @@ String videoFilter = "pixel";
 int maxValue = 525;
 int minValue = 0;
 
-// fullscreen
+// fullscreen true or false
 boolean isFullscreen = false;
+
+// the port number of arduino (on mac mini should be 5)
+int arduinoPort = 5;
 
 // flags
 boolean debug = false;
@@ -54,7 +57,7 @@ void setup() {
 	println(Arduino.list());
 
 	// create the connection with arduino
-	arduino = new Arduino(this, Arduino.list()[7], 57600);
+	arduino = new Arduino(this, Arduino.list()[arduinoPort], 57600);
 	arduino.pinMode(0, Arduino.INPUT);
 
 	// create the cp5 instance
