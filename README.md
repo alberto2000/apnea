@@ -34,6 +34,15 @@ Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2
 6. *Press the "Play" button* on the top left of the Processing window
 7. The app will open and start reacting to audience
 
+### Debugging
+You can press "d" (stands for "debug") on the keyboard to show/hide the debug controls.
+1. The label origValue shows the original value readings from the sensor (should always be between 0 and 1023)
+2. The label modValue shows the value that has been modifed by Min/Max Sensor Range Calibration (see below)
+3. The Min/Max Sensor Range Calibration has two handles, one on the left for minimal value and one on the right for maximal value, calibrate these to achieve the desired visual output
+4. Pixel/Posterize visual effect selection buttons, to switch effects
+5. Delay slider to set a delay between frames (most certainly not needed) - more delay, the slower the animation but the less resources needed from the computer
+6. Sound effects selection boxes, if you want to disable the hickup/sneeze/cough sounds
+
 ### Images
 
 Sketch for setup
