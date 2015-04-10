@@ -23,18 +23,24 @@ RadioButton filterRadio;
 Slider delaySlider;
 CheckBox soundsCheckBox;
 
+// IMPORTANT!
+// turn to "true" (without the quotes) if you want it fullscreen!
+// fullscreen true or false
+boolean isFullscreen = true;
+
+// IMPORTANT!
+// this is to select the port on which arduino is connected
+// the port number of arduino on mac mini should be "5" (without the quotes)
+int arduinoPort = 5;
+
+// --- PLEASE DO NOT CHANGE CODE DOWN BELOW ---
+
 // "posterize", "pixel"
 String videoFilter = "pixel";
 
 // sensor calibration settings
 int maxValue = 525;
 int minValue = 0;
-
-// fullscreen true or false
-boolean isFullscreen = true;
-
-// the port number of arduino (on mac mini should be 5)
-int arduinoPort = 5;
 
 // flags
 boolean debug = false;
