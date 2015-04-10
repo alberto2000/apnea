@@ -36,8 +36,17 @@ Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2
 
 ### Images
 
+Sketch for setup
 ![Setup Sketch](https://raw.github.com/alberto2000/rcabiennale/master/img/rcabiennale_setup.png)
+
+Testing
 ![RCA Test Setup](https://raw.github.com/alberto2000/rcabiennale/master/img/test_setup.jpg)
+
+The sensor
 ![Sensor](https://raw.github.com/alberto2000/rcabiennale/master/img/sensor.jpg)
+
+Arduino connections
 ![Arduino Connections](https://raw.github.com/alberto2000/rcabiennale/master/img/arduino_connections.jpg)
+
+Processing
 ![Processing](https://raw.github.com/alberto2000/rcabiennale/master/img/processing.jpg)
