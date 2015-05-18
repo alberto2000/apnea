@@ -1,6 +1,8 @@
 # rcabiennale
 Interactive Installation for Christina Mamakos to be exhibited at RCA Biennale 2015 in London
 
+Video (password: apnea): https://vimeo.com/128140554
+
 *Distance from guests to the projection on the wall controls pixelation/posterization of image and sound volume. Also sample sounds will be triggered if people trespass certain distance values. From the distance, the visuals are clear and natural - the closer you get to it, the more abstract and louder it gets.*
 
 ## Manual
